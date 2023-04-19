@@ -414,7 +414,64 @@
 
 // console.log(arr)
 
+// const arr = [
+//     [1,5,3],
+//     [5,7,2],
+//     [9,8,4],
+// ]
 
+// function sumTable(arr, index, type) {
+//     let sum = 0;
+//     if (type === 'row') {
+//         arr[index].forEach((elem) => {
+//           sum += elem;
+//         });
+//       } else if (type === 'column') {
+//         arr.forEach((elem) => {
+//           sum += elem[index];
+//         });
+//       }
+//       return sum;
+//   }
+
+//   console.log(sumTable(arr, 1, 'column'))
+
+// const arr = [1, 2, 3, -5, -2, 4, 5, -6, 10, 20];
+
+// function sumPositive(arr) {
+//     let sum = 0
+//     let average = 0
+//     arr.forEach(elem => {
+//         if(elem > 0){
+//             sum += elem
+//             average = Math.round(sum / arr.length) 
+//         }
+//     });
+//     return average
+// }
+
+// console.log(sumPositive(arr))
+
+
+// const student = {
+//     name: "Иван",
+//     age: 20,
+//     city: "Москва",
+//     grades: [5,3,4,4,5,8]
+// };
+
+// function middleGrade(obj) {
+//     let sumMarks = 0
+//     let averageMarks = 0
+//     const marks = obj.grades
+//     marks.forEach(elem => {
+//         sumMarks += elem
+//         averageMarks = Math.round((sumMarks / marks.length) * 10) / 10
+//     });
+//     return averageMarks
+// }
+
+// console.log(middleGrade(student))
 
 
 
