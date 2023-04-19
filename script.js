@@ -244,45 +244,180 @@
 
 
 
+// function gameRPS() {
+//   const userChoice = prompt("Choose paper, rock or scissors");
 
+//   const choices = ["rock" , "paper", "scissors"]
 
+//   let computerChoiceKey = Math.floor(Math.random() * Object.keys(choices).length);
 
-
-
-function gameRPS() {
-  const userChoice = prompt("Choose paper, rock or scissors");
-
-//   const choices = {
-//     0: "paper",
-//     1: "rock",
-//     2: "scissors"
+//   const computerChoice = choices[computerChoiceKey]
+  
+//   const result = {
+//     paper: {
+//         paper: "Drow",
+//         rock: "Lose",
+//         scissors: "Win"
+//     },
+//     rock: {
+//         paper: "Win",
+//         rock: "Drow",
+//         scissors: "Lose"
+//     },
+//     scissors: {
+//         paper: "Lose",
+//         rock: "Win",
+//         scissors: "Drow"
+//     }
 //   }
 
-  const choices = ["rock" , "paper", "scissors"]
+//   return result[computerChoice][userChoice]
+// }
 
-  let computerChoiceKey = Math.floor(Math.random() * Object.keys(choices).length);
+// console.log(gameRPS()) 
 
-  const computerChoice = choices[computerChoiceKey]
-  
-  const result = {
-    paper: {
-        paper: "Drow",
-        rock: "Lose",
-        scissors: "Win"
-    },
-    rock: {
-        paper: "Win",
-        rock: "Drow",
-        scissors: "Lose"
-    },
-    scissors: {
-        paper: "Lose",
-        rock: "Win",
-        scissors: "Drow"
-    }
-  }
+// function camelize(str) {
+//   return str.split('-').map(function(word, index) {
+//     if(index == 0) {
+//       return word
+//     }
+//     return word.charAt(0).toUpperCase() + word.slice(1)
+//   }).join('')
+// }
 
-  return result[computerChoice][userChoice]
-}
+// console.log(camelize("my-short-string"));
 
-console.log(gameRPS()) 
+// function filterRange(arr, a, b) {
+//   let result = []
+
+//   for(let i = 0; i < arr.length; i++) {
+//     if(arr[i] >= a && arr[i] <= b) {
+//       result.push(arr[i])
+//     }
+//   }
+//   return result
+// }
+
+// let arr = [5, 3, 8, 1];
+
+// let filtered = filterRange(arr, 1, 4);
+
+// console.log( filtered );
+
+// console.log( arr );
+
+// function filterRangeInPlace(arr, a, b) {
+//   for(let i = 0; i < arr.length; i++) {
+//     if(arr[i] < a || arr[i] > b) {
+//       arr.splice(i, 1)
+//       i--
+//     }
+//   }
+// }
+
+// let arr = [1, 2, 3, 4, 5];
+// filterRangeInPlace(arr, 2, 3);
+
+// console.log(arr);
+
+
+
+
+// let arr = [5, 2, 1, -10, 8];
+
+// arr.sort(function(a, b) {
+//   return a - b
+// });
+
+
+// console.log( arr ); // 8, 5, 2, 1, -10
+
+// let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+// let petya = { name: "Петя", surname: "Иванов", id: 2 };
+// let masha = { name: "Маша", surname: "Петрова", id: 3 };
+
+// let users = [ vasya, petya, masha ];
+
+// let usersMapped = users.map(user => ({
+//     fullname: `${user.name} ${user.surname}`,
+//     id: user.id
+// }))
+
+// console.log( usersMapped[2].fullname )
+
+
+// function getAverageAge(users) {
+//     let sumAge = 0
+//     for (let i = 0; i < users.length; i++) {
+//         sumAge += users[i].age
+//     }
+ 
+//     let middleAge = sumAge / users.length
+
+//     return Math.round(middleAge) 
+// }
+
+
+// let vasya = { name: "Вася", age: 26 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 29 };
+
+// let arr = [ vasya, petya, masha ];
+
+// console.log( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+
+// const arr = [1,6,3,1234,5,67,]
+
+// arr.forEach((elem, index) => arr2[index] = elem * 2)
+
+// const arr2 = arr.map((elem) => elem * 2)
+
+// const result = arr.includes(1234)
+
+// console.log(result)
+
+
+
+// const arr2 = []
+
+// const arr2 = arr.filter((elem) => elem < 6)
+
+// for(let i = 0; i < arr.length; i++) {
+//     if(arr[i] < 6) {
+//         arr2.push(arr[i])
+//     }
+// }
+
+// console.log(arr2)
+
+
+// const arr = [
+//     {
+//         id: 1,
+//         name: "Illia"
+//     },
+//     {
+//         id: 2,
+//         name: "Kolya"
+//     },
+//     {
+//         id: 3,
+//         name: "Pawel"
+//     },
+// ]
+
+// const arr2 = arr.map((elem, index) => ({
+//     id: elem.id,
+//     name: elem.name,
+//     index: index,
+// }))
+
+// console.log(arr)
+
+
+
+
+
+
+
+
