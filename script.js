@@ -414,6 +414,123 @@
 
 // console.log(arr)
 
+// массивы ЗАДАНИЯ
+
+
+// let arr = [
+//     {
+//         name: "Illia",
+//         age: 28,
+//         salary: 1599,
+//     },
+//     {
+//         name: "Kolya",
+//         age: 18,
+//         salary: 2100,
+//     },
+//     {
+//         name: "Pawel",
+//         age: 20,
+//         salary: 2000,
+//     },
+// ]
+
+// console.log(arr)
+
+
+// function checkSenior(arr) {
+//     let oldestAge = 0
+//     let oldestEmployee
+//     for(let i = 0; i < arr.length; i++){
+//         if (arr[i].age > oldestAge) {
+//             oldestAge = arr[i].age;
+//             oldestEmployee = arr[i].name;
+//         }
+//     }
+//     return oldestEmployee
+// }
+
+// console.log(checkSenior(arr))
+
+
+// let products = [
+//     { 
+//         name: "Футболка", 
+//         price: 900, 
+//         rating: 4.5 
+//     },
+//     { 
+//         name: "Джинсы", 
+//         price: 2500, 
+//         rating: 3.9
+//     },
+//     { 
+//         name: "Кроссовки", 
+//         price: 5000, 
+//         rating: 4.9 
+//     },
+//     { 
+//         name: "Рюкзак", 
+//         price: 3000, 
+//         rating: 4.7 
+//     },
+//     { 
+//         name: "Часы", 
+//         price: 8000, 
+//         rating: 4.6 
+//     }
+//   ];
+
+// const arr = products.filter((elem) => {
+//     return elem.price > 1000 && elem.rating > 4
+// })
+
+// console.log(arr)
+  
+
+
+// const products = [
+//     { 
+//         name: "Телефон", 
+//         category: "Электроника", 
+//         price: 20000 
+//     },
+//     { 
+//         name: "Футболка", 
+//         category: "Одежда", 
+//         price: 1000 
+//     },
+//     { 
+//         name: "Ноутбук", 
+//         category: "Электроника", 
+//         price: 50000 
+//     },
+//     { 
+//         name: "Шорты", 
+//         category: "Одежда", 
+//         price: 1500 
+//     },
+// ];
+  
+
+// function groupProductsByCategory(products) {
+//     const groupedProducts = {};
+//     products.forEach(elem => {
+//       if (!groupedProducts[elem.category]) {
+//         groupedProducts[elem.category] = [];
+//       }
+//       groupedProducts[elem.category].push(elem);
+//     });
+//     return groupedProducts;
+//   }
+
+// console.log(groupProductsByCategory(products))
+
+
+
+
+
+
 // const arr = [
 //     [1,5,3],
 //     [5,7,2],
@@ -474,6 +591,98 @@
 // console.log(middleGrade(student))
 
 
+// const cities = ["Варшава", "Краков", "Лодзь", "Вроцлав", "Познань", "Гданьск", "Щецин", "Люблин", "Катовице", "Быдгощ"];
+
+// function filterToUpper(arr) {
+//     const filteredCities = arr.filter(elem => elem.includes("а")).map(city => {
+//         return city.toUpperCase()
+//     })
+    
+//     return filteredCities
+// }
+
+// console.log(cities)
+
+// console.log(filterToUpper(cities))
+
+
+// const salesData = {
+//     "Chocolate": 100,
+//     "Coffee": 50,
+//     "Tea": 75,
+//     "Juice": 120,
+//     "Cookies": 200
+//   };
+
+//   function findBestProd(obj) {
+//     let maxSales = 0
+//     let bestProd = ""
+//     for(let prod in obj) {
+//         if(salesData[prod] > maxSales) {
+//             maxSales = salesData[prod]
+//             bestProd = prod
+//         }
+//     }
+//     return bestProd
+//   }
+
+//   console.log(findBestProd(salesData))
+
+// const students = [
+//     {
+//       name: "Иван",
+//       course: 2,
+//       grades: [5, 4, 5, 5, 5, 5, 5, 5, 5]
+//     },
+//     {
+//       name: "Алексей",
+//       course: 3,
+//       grades: [4, 4, 4, 5, 2, 1, 1,]
+//     },
+//     {
+//       name: "Мария",
+//       course: 1,
+//       grades: [5, 5, 5, 5]
+//     }
+//   ];
+
+  
+//   function findStudentsWithHighAverage(arr) {
+
+//     const topStudents = students.filter(student => {
+//         const average = student.grades.reduce((total, grade) => total + grade) / student.grades.length;
+//         return average > 4.5;
+//       }).map(({ name, course }) => ({ name, course }));
+//       return topStudents
+//   }
+
+//   console.log(findStudentsWithHighAverage(students))
+
+
+const products = [
+    { name: "Телефон Samsung", price: 15000, rating: 4.5, available: true },
+    { name: "Ноутбук Lenovo", price: 45000, rating: 4.2, available: true },
+    { name: "Планшет Apple", price: 35000, rating: 4.8, available: false },
+    { name: "Умные часы Xiaomi", price: 5000, rating: 4.1, available: true },
+    { name: "Фотоаппарат Canon", price: 25000, rating: 4.4, available: false }
+  ];
+
+  function sortProduct(arr) {
+    return products.sort((a, b) => {
+        if (a.price < b.price) {
+          return -1;
+        } else if (a.price > b.price) {
+          return 1;
+        }
+        if (a.rating > b.rating) {
+          return -1;
+        } else if (a.rating < b.rating) {
+          return 1;
+        } 
+    })
+  }
+
+  console.log(sortProduct(products))
 
 
 
