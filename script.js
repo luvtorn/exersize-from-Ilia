@@ -435,18 +435,24 @@
 //     },
 // ]
 
-// console.log(arr)
-
 
 // function checkSenior(arr) {
 //     let oldestAge = 0
-//     let oldestEmployee
-//     for(let i = 0; i < arr.length; i++){
-//         if (arr[i].age > oldestAge) {
-//             oldestAge = arr[i].age;
-//             oldestEmployee = arr[i].name;
-//         }
-//     }
+//     let oldestEmployee = ""
+//     // for(let i = 0; i < arr.length; i++){
+//     //     if (arr[i].age > oldestAge) {
+//     //         oldestAge = arr[i].age;
+//     //         oldestEmployee = arr[i].name;
+//     //     }
+//     // }
+//     // return oldestEmployee
+
+//     arr.filter(elem => {
+//       if(elem.age > oldestAge) {
+//         oldestAge = elem.age
+//         oldestEmployee = elem.name
+//       }
+//     })
 //     return oldestEmployee
 // }
 
@@ -481,11 +487,21 @@
 //     }
 //   ];
 
-// const arr = products.filter((elem) => {
-//     return elem.price > 1000 && elem.rating > 4
-// })
+//   function filtArr(arr) {
+//     const sort = arr.filter(elem => {
+//       return elem.price > 1000 && elem.rating > 4
+//     })
+//     sort.sort((a, b) => {
+//       if (a.price < b.price) {
+//         return -1;
+//       } else if (a.price > b.price) {
+//         return 1;
+//       }
+//     })
+//     return sort
+//   }
 
-// console.log(arr)
+//   console.log(filtArr(products))
   
 
 
@@ -515,17 +531,23 @@
 
 // function groupProductsByCategory(products) {
 //     const groupedProducts = {};
-//     products.forEach(elem => {
+//     // products.forEach(elem => {
+//     //   if (!groupedProducts[elem.category]) {
+//     //     groupedProducts[elem.category] = [];
+//     //   }
+//     //   groupedProducts[elem.category].push(elem);
+//     // });
+
+//     for(let elem of products) {
 //       if (!groupedProducts[elem.category]) {
 //         groupedProducts[elem.category] = [];
 //       }
 //       groupedProducts[elem.category].push(elem);
-//     });
+//     }
 //     return groupedProducts;
 //   }
 
 // console.log(groupProductsByCategory(products))
-
 
 
 
@@ -538,36 +560,63 @@
 // ]
 
 // function sumTable(arr, index, type) {
-//     let sum = 0;
+//     // let sum = 0;
+//     // if (type === 'row') {
+//     //     arr[index].forEach((elem) => {
+//     //       sum += elem;
+//     //     });
+//     //   } else if (type === 'column') {
+//     //     arr.forEach((elem) => {
+//     //       sum += elem[index];
+//     //     });
+//     //   }
+//     //   return sum;
+
+//     let sum = 0
+
 //     if (type === 'row') {
-//         arr[index].forEach((elem) => {
-//           sum += elem;
-//         });
+//         for(let elem of arr[index]) {
+//             sum += elem
+//         }
 //       } else if (type === 'column') {
-//         arr.forEach((elem) => {
-//           sum += elem[index];
-//         });
+//         for(let elem of arr) {
+//             sum += elem[index]
+//         }
 //       }
-//       return sum;
+//       return sum
 //   }
 
-//   console.log(sumTable(arr, 1, 'column'))
+//   console.log(sumTable(arr, 1, 'row'))
+
+
+
+
+
+
 
 // const arr = [1, 2, 3, -5, -2, 4, 5, -6, 10, 20];
 
-// function sumPositive(arr) {
+// function averagePositive(arr) {
 //     let sum = 0
 //     let average = 0
-//     arr.forEach(elem => {
-//         if(elem > 0){
+//     // arr.forEach(elem => {
+//     //     if(elem > 0){
+//     //         sum += elem
+//     //         average = Math.round(sum / arr.length) 
+//     //     }
+//     // });
+//     // return average
+
+//     for(let elem of arr) {
+//         if(elem > 0) {
 //             sum += elem
-//             average = Math.round(sum / arr.length) 
+//             average = Math.round(sum / arr.length)
 //         }
-//     });
+//     }
 //     return average
 // }
 
-// console.log(sumPositive(arr))
+// console.log(averagePositive(arr))
 
 
 // const student = {
@@ -581,10 +630,17 @@
 //     let sumMarks = 0
 //     let averageMarks = 0
 //     const marks = obj.grades
-//     marks.forEach(elem => {
+//     // marks.forEach(elem => {
+//     //     sumMarks += elem
+//     //     averageMarks = Math.round((sumMarks / marks.length) * 10) / 10
+//     // });
+//     // return averageMarks
+
+//     for(let elem of marks) {
 //         sumMarks += elem
 //         averageMarks = Math.round((sumMarks / marks.length) * 10) / 10
-//     });
+//     }
+
 //     return averageMarks
 // }
 
@@ -594,10 +650,17 @@
 // const cities = ["Варшава", "Краков", "Лодзь", "Вроцлав", "Познань", "Гданьск", "Щецин", "Люблин", "Катовице", "Быдгощ"];
 
 // function filterToUpper(arr) {
-//     const filteredCities = arr.filter(elem => elem.includes("а")).map(city => {
-//         return city.toUpperCase()
-//     })
+//     // const filteredCities = arr.filter(elem => elem.includes("а")).map(city => {
+//     //     return city.toUpperCase()
+//     // })
     
+//     // return filteredCities
+//     let filteredCities = [] 
+//     for(let i = 0; i < arr.length; i++) {
+//         if(arr[i].includes("а")){
+//             filteredCities.push(arr[i])
+//         }
+//     }
 //     return filteredCities
 // }
 
@@ -624,6 +687,8 @@
 //         }
 //     }
 //     return bestProd
+
+
 //   }
 
 //   console.log(findBestProd(salesData))
@@ -659,30 +724,49 @@
 //   console.log(findStudentsWithHighAverage(students))
 
 
-const products = [
-    { name: "Телефон Samsung", price: 15000, rating: 4.5, available: true },
-    { name: "Ноутбук Lenovo", price: 45000, rating: 4.2, available: true },
-    { name: "Планшет Apple", price: 35000, rating: 4.8, available: false },
-    { name: "Умные часы Xiaomi", price: 5000, rating: 4.1, available: true },
-    { name: "Фотоаппарат Canon", price: 25000, rating: 4.4, available: false }
-  ];
+// const products = [
+//     { name: "Телефон Samsung", price: 15000, rating: 4.5, available: true },
+//     { name: "Ноутбук Lenovo", price: 45000, rating: 4.2, available: true },
+//     { name: "Планшет Apple", price: 35000, rating: 4.8, available: false },
+//     { name: "Умные часы Xiaomi", price: 5000, rating: 4.1, available: true },
+//     { name: "Фотоаппарат Canon", price: 25000, rating: 4.4, available: false }
+//   ];
 
-  function sortProduct(arr) {
-    return products.sort((a, b) => {
-        if (a.price < b.price) {
-          return -1;
-        } else if (a.price > b.price) {
-          return 1;
-        }
-        if (a.rating > b.rating) {
-          return -1;
-        } else if (a.rating < b.rating) {
-          return 1;
-        } 
-    })
-  }
 
-  console.log(sortProduct(products))
+
+//   function sortProduct(arr) {
+//     // return products.sort((a, b) => {
+//         // if (a.price < b.price) {
+//         //   return -1;
+//         // } else if (a.price > b.price) {
+//         //   return 1;
+//         // }
+//         // if (a.rating > b.rating) {
+//         //   return -1;
+//         // } else if (a.rating < b.rating) {
+//         //   return 1;
+//         // } 
+//     // })
+
+//     for(let a of products) {
+//       for(let b of products){
+//         console.log(a)
+//         console.log(b)
+//         if (a.price < b.price) {
+//           return -1;
+//         } else if (a.price > b.price) {
+//           return 1;
+//         }
+//         if (a.rating > b.rating) {
+//           return -1;
+//         } else if (a.rating < b.rating) {
+//           return 1;
+//         }
+//       }
+//     }
+//   }
+
+//   console.log(sortProduct(products))
 
 
 
