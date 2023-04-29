@@ -436,7 +436,7 @@
 // ]
 
 
-// function checkSenior(arr) {
+// function checkSenior(arr) {  // rewrite loop with for of, 3 sposob with reduce: найти макс возраст с помощью reduce
 //     let oldestAge = 0
 //     let oldestEmployee = ""
 //     // for(let i = 0; i < arr.length; i++){
@@ -447,7 +447,7 @@
 //     // }
 //     // return oldestEmployee
 
-//     arr.filter(elem => {
+//     arr.forEach(elem => {
 //       if(elem.age > oldestAge) {
 //         oldestAge = elem.age
 //         oldestEmployee = elem.name
@@ -488,17 +488,26 @@
 //   ];
 
 //   function filtArr(arr) {
-//     const sort = arr.filter(elem => {
-//       return elem.price > 1000 && elem.rating > 4
+//     // const filtred = arr.filter(elem => {
+//     //   return elem.price > 1000 && elem.rating > 4
+//     // })
+
+//     const filtered = []
+
+//     for(let elem of arr){
+//         filtered.push(elem.price > 1000 && elem.rating > 4)
+//     }
+
+
+//     filtred.sort((a, b) => {
+//     //   if (a.price < b.price) {
+//     //     return -1;
+//     //   } else if (a.price > b.price) {
+//     //     return 1;
+//     //   }
+//         return a.price - b.price
 //     })
-//     sort.sort((a, b) => {
-//       if (a.price < b.price) {
-//         return -1;
-//       } else if (a.price > b.price) {
-//         return 1;
-//       }
-//     })
-//     return sort
+//     return filtred
 //   }
 
 //   console.log(filtArr(products))
@@ -531,20 +540,20 @@
 
 // function groupProductsByCategory(products) {
 //     const groupedProducts = {};
-//     // products.forEach(elem => {
-//     //   if (!groupedProducts[elem.category]) {
-//     //     groupedProducts[elem.category] = [];
-//     //   }
-//     //   groupedProducts[elem.category].push(elem);
-//     // });
-
-//     for(let elem of products) {
+//     products.forEach(elem => {
 //       if (!groupedProducts[elem.category]) {
 //         groupedProducts[elem.category] = [];
 //       }
 //       groupedProducts[elem.category].push(elem);
-//     }
-//     return groupedProducts;
+//     });
+
+//     // for(let elem of products) {
+//     //   if (!groupedProducts[elem.category]) {
+//     //     groupedProducts[elem.category] = [];
+//     //   }
+//     //   groupedProducts[elem.category].push(elem);
+//     // }
+//     // return groupedProducts;
 //   }
 
 // console.log(groupProductsByCategory(products))
@@ -560,30 +569,30 @@
 // ]
 
 // function sumTable(arr, index, type) {
-//     // let sum = 0;
-//     // if (type === 'row') {
-//     //     arr[index].forEach((elem) => {
-//     //       sum += elem;
-//     //     });
-//     //   } else if (type === 'column') {
-//     //     arr.forEach((elem) => {
-//     //       sum += elem[index];
-//     //     });
-//     //   }
-//     //   return sum;
-
-//     let sum = 0
-
+//     let sum = 0;
 //     if (type === 'row') {
-//         for(let elem of arr[index]) {
-//             sum += elem
-//         }
+//         arr[index].forEach((elem) => {
+//           sum += elem;
+//         });
 //       } else if (type === 'column') {
-//         for(let elem of arr) {
-//             sum += elem[index]
-//         }
+//         arr.forEach((elem) => {
+//           sum += elem[index];
+//         });
 //       }
-//       return sum
+//       return sum;
+
+//     // let sum = 0
+
+//     // if (type === 'row') {
+//     //     for(let elem of arr[index]) {
+//     //         sum += elem
+//     //     }
+//     //   } else if (type === 'column') {
+//     //     for(let elem of arr) {
+//     //         sum += elem[index]
+//     //     }
+//     //   }
+//     //   return sum
 //   }
 
 //   console.log(sumTable(arr, 1, 'row'))
@@ -599,21 +608,23 @@
 // function averagePositive(arr) {
 //     let sum = 0
 //     let average = 0
-//     // arr.forEach(elem => {
-//     //     if(elem > 0){
-//     //         sum += elem
-//     //         average = Math.round(sum / arr.length) 
-//     //     }
-//     // });
-//     // return average
 
-//     for(let elem of arr) {
-//         if(elem > 0) {
-//             sum += elem
-//             average = Math.round(sum / arr.length)
-//         }
-//     }
+//     const positive = arr.filter(elem => elem > 0)
+
+//     positive.forEach(elem => { // reduce переписать
+//         sum += elem
+//     });
+
+//     average = Math.round(sum / positive.length) 
 //     return average
+
+//     // for(let elem of arr) {
+//     //     if(elem > 0) {
+//     //         sum += elem
+//     //     }
+//     // }
+//     // average = Math.round((sum / arr.length) * 10) / 10
+//     // return average
 // }
 
 // console.log(averagePositive(arr))
@@ -630,17 +641,17 @@
 //     let sumMarks = 0
 //     let averageMarks = 0
 //     const marks = obj.grades
+
 //     // marks.forEach(elem => {
 //     //     sumMarks += elem
-//     //     averageMarks = Math.round((sumMarks / marks.length) * 10) / 10
 //     // });
+//     // averageMarks = Math.round((sumMarks / marks.length) * 10) / 10
 //     // return averageMarks
 
 //     for(let elem of marks) {
 //         sumMarks += elem
-//         averageMarks = Math.round((sumMarks / marks.length) * 10) / 10
 //     }
-
+//     averageMarks = Math.round((sumMarks / marks.length) * 10) / 10
 //     return averageMarks
 // }
 
@@ -658,7 +669,7 @@
 //     let filteredCities = [] 
 //     for(let i = 0; i < arr.length; i++) {
 //         if(arr[i].includes("а")){
-//             filteredCities.push(arr[i])
+//             filteredCities.push(arr[i].toUpperCase())
 //         }
 //     }
 //     return filteredCities
@@ -675,7 +686,9 @@
 //     "Tea": 75,
 //     "Juice": 120,
 //     "Cookies": 200
-//   };
+// };
+
+//     // написать решение с использванием Object.entries
 
 //   function findBestProd(obj) {
 //     let maxSales = 0
@@ -728,7 +741,7 @@
 //     { name: "Телефон Samsung", price: 15000, rating: 4.5, available: true },
 //     { name: "Ноутбук Lenovo", price: 45000, rating: 4.2, available: true },
 //     { name: "Планшет Apple", price: 35000, rating: 4.8, available: false },
-//     { name: "Умные часы Xiaomi", price: 5000, rating: 4.1, available: true },
+//     { name: "Умные часы Xiaomi", price: 15000, rating: 4.1, available: true },
 //     { name: "Фотоаппарат Canon", price: 25000, rating: 4.4, available: false }
 //   ];
 
@@ -756,12 +769,14 @@
 //           return -1;
 //         } else if (a.price > b.price) {
 //           return 1;
+//         } else if (a.price === b.price) {
+//             if (a.rating > b.rating) {
+//                 return -1;
+//               } else if (a.rating < b.rating) {
+//                 return 1;
+//               }
 //         }
-//         if (a.rating > b.rating) {
-//           return -1;
-//         } else if (a.rating < b.rating) {
-//           return 1;
-//         }
+       
 //       }
 //     }
 //   }
