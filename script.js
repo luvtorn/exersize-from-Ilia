@@ -439,21 +439,21 @@
 // function checkSenior(arr) {  // rewrite loop with for of, 3 sposob with reduce: найти макс возраст с помощью reduce
 //     let oldestAge = 0
 //     let oldestEmployee = ""
-//     // for(let i = 0; i < arr.length; i++){
-//     //     if (arr[i].age > oldestAge) {
-//     //         oldestAge = arr[i].age;
-//     //         oldestEmployee = arr[i].name;
-//     //     }
-//     // }
-//     // return oldestEmployee
-
-//     arr.forEach(elem => {
-//       if(elem.age > oldestAge) {
-//         oldestAge = elem.age
-//         oldestEmployee = elem.name
-//       }
-//     })
+//     for(let i of arr){
+//         if (i.age > oldestAge) {
+//             oldestAge = i.age;
+//             oldestEmployee = i.name;
+//         }
+//     }
 //     return oldestEmployee
+
+//     // arr.forEach(elem => {
+//     //   if(elem.age > oldestAge) {
+//     //     oldestAge = elem.age
+//     //     oldestEmployee = elem.name
+//     //   }
+//     // })
+//     // return oldestEmployee
 // }
 
 // console.log(checkSenior(arr))
@@ -569,17 +569,11 @@
 // ]
 
 // function sumTable(arr, index, type) {
-//     let sum = 0;
 //     if (type === 'row') {
-//         arr[index].forEach((elem) => {
-//           sum += elem;
-//         });
-//       } else if (type === 'column') {
-//         arr.forEach((elem) => {
-//           sum += elem[index];
-//         });
-//       }
-//       return sum;
+//         return arr[index].reduce((total, value) => total + value, 0);
+//     } else if (type === 'column') {
+//         return arr.reduce((total, row) => total + row[index], 0);
+//     }
 
 //     // let sum = 0
 
@@ -595,7 +589,7 @@
 //     //   return sum
 //   }
 
-//   console.log(sumTable(arr, 1, 'row'))
+//   console.log(sumTable(arr, 0, 'column'))
 
 
 
@@ -611,20 +605,24 @@
 
 //     const positive = arr.filter(elem => elem > 0)
 
-//     positive.forEach(elem => { // reduce переписать
-//         sum += elem
-//     });
+//     // // positive.forEach(elem => { // reduce переписать
+//     // //     sum += elem
+//     // // });
 
-//     average = Math.round(sum / positive.length) 
-//     return average
+//     // const sumOfPos = positive.reduce((total, value) => total + value)
+//     // console.log(sumOfPos)
 
-//     // for(let elem of arr) {
-//     //     if(elem > 0) {
-//     //         sum += elem
-//     //     }
-//     // }
-//     // average = Math.round((sum / arr.length) * 10) / 10
+//     // average = Math.round((sum / positive.length) * 10) / 10
 //     // return average
+
+//     for(let elem of arr) {
+//         if(elem > 0) {
+//             sum += elem
+//         }
+//     }
+//     console.log(sum)
+//     average = Math.round((sum / positive.length) * 10) / 10
+//     return average
 // }
 
 // console.log(averagePositive(arr))
@@ -681,7 +679,7 @@
 
 
 // const salesData = {
-//     "Chocolate": 100,
+//     "Chocolate": 300,
 //     "Coffee": 50,
 //     "Tea": 75,
 //     "Juice": 120,
@@ -693,14 +691,22 @@
 //   function findBestProd(obj) {
 //     let maxSales = 0
 //     let bestProd = ""
-//     for(let prod in obj) {
-//         if(salesData[prod] > maxSales) {
-//             maxSales = salesData[prod]
-//             bestProd = prod
+
+//     const arrOfObj = Object.entries(obj)
+//     // for(let prod in obj) {
+//     //     if(salesData[prod] > maxSales) {
+//     //         maxSales = salesData[prod]
+//     //         bestProd = prod
+//     //     }
+//     // }
+
+//     for(const [key, value] of arrOfObj) {
+//         if(value > maxSales) {
+//             maxSales = value
+//             bestProd = key
 //         }
 //     }
 //     return bestProd
-
 
 //   }
 
@@ -725,13 +731,15 @@
 //   ];
 
   
+  
+  
 //   function findStudentsWithHighAverage(arr) {
 
-//     const topStudents = students.filter(student => {
-//         const average = student.grades.reduce((total, grade) => total + grade) / student.grades.length;
-//         return average > 4.5;
-//       }).map(({ name, course }) => ({ name, course }));
-//       return topStudents
+//     const topStudents = arr.filter(student => {
+//         const average = student.grades.reduce((total, grade) => total + grade) / student.grades.length
+//         return average > 4.5
+//     }).map(({name, course, grades}) => ({name, course, grades}))
+//     return topStudents
 //   }
 
 //   console.log(findStudentsWithHighAverage(students))
@@ -748,39 +756,41 @@
 
 
 //   function sortProduct(arr) {
-//     // return products.sort((a, b) => {
-//         // if (a.price < b.price) {
-//         //   return -1;
-//         // } else if (a.price > b.price) {
-//         //   return 1;
-//         // }
-//         // if (a.rating > b.rating) {
-//         //   return -1;
-//         // } else if (a.rating < b.rating) {
-//         //   return 1;
-//         // } 
-//     // })
+//         arr.sort(function(a, b) {
+//           if (a.price < b.price) {
+//             return -1;
+//           }
+//           if (a.price > b.price) {
+//             return 1;
+//           }
+//           if (a.rating > b.rating) {
+//             return -1;
+//           }
+//           if (a.rating < b.rating) {
+//             return 1;
+//           }
+//           return 0;
+//         });
 
-//     for(let a of products) {
-//       for(let b of products){
-//         console.log(a)
-//         console.log(b)
-//         if (a.price < b.price) {
-//           return -1;
-//         } else if (a.price > b.price) {
-//           return 1;
-//         } else if (a.price === b.price) {
-//             if (a.rating > b.rating) {
-//                 return -1;
-//               } else if (a.rating < b.rating) {
-//                 return 1;
-//               }
-//         }
+//         return arr;
+
+//         // for(let a of products) {
+//     //   for(let b of products){
+//     //     if (a.price < b.price) {
+//     //       return -1;
+//     //     } else if (a.price > b.price) {
+//     //       return 1;
+//     //     } else if (a.price === b.price) {
+//     //         if (a.rating > b.rating) {
+//     //             return -1;
+//     //           } else if (a.rating < b.rating) {
+//     //             return 1;
+//     //           }
+//     //     }
        
-//       }
+//     //   }
+//     // }
 //     }
-//   }
-
 //   console.log(sortProduct(products))
 
 
