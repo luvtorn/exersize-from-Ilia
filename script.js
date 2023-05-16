@@ -227,7 +227,7 @@
 // }
 
 // const isLeap = (year) => year % 4 === 0
-    
+
 // console.log(isLeap(2024))
 
 // var corners = {
@@ -242,8 +242,6 @@
 
 // console.log(res[randCorner]);
 
-
-
 // function gameRPS() {
 //   const userChoice = prompt("Choose paper, rock or scissors");
 
@@ -252,7 +250,7 @@
 //   let computerChoiceKey = Math.floor(Math.random() * Object.keys(choices).length);
 
 //   const computerChoice = choices[computerChoiceKey]
-  
+
 //   const result = {
 //     paper: {
 //         paper: "Drow",
@@ -274,7 +272,7 @@
 //   return result[computerChoice][userChoice]
 // }
 
-// console.log(gameRPS()) 
+// console.log(gameRPS())
 
 // function camelize(str) {
 //   return str.split('-').map(function(word, index) {
@@ -320,15 +318,11 @@
 
 // console.log(arr);
 
-
-
-
 // let arr = [5, 2, 1, -10, 8];
 
 // arr.sort(function(a, b) {
 //   return a - b
 // });
-
 
 // console.log( arr ); // 8, 5, 2, 1, -10
 
@@ -345,18 +339,16 @@
 
 // console.log( usersMapped[2].fullname )
 
-
 // function getAverageAge(users) {
 //     let sumAge = 0
 //     for (let i = 0; i < users.length; i++) {
 //         sumAge += users[i].age
 //     }
- 
+
 //     let middleAge = sumAge / users.length
 
-//     return Math.round(middleAge) 
+//     return Math.round(middleAge)
 // }
-
 
 // let vasya = { name: "Вася", age: 26 };
 // let petya = { name: "Петя", age: 30 };
@@ -376,8 +368,6 @@
 
 // console.log(result)
 
-
-
 // const arr2 = []
 
 // const arr2 = arr.filter((elem) => elem < 6)
@@ -389,7 +379,6 @@
 // }
 
 // console.log(arr2)
-
 
 // const arr = [
 //     {
@@ -416,7 +405,6 @@
 
 // массивы ЗАДАНИЯ
 
-
 // let arr = [
 //     {
 //         name: "Illia",
@@ -430,22 +418,21 @@
 //     },
 //     {
 //         name: "Pawel",
-//         age: 20,
+//         age: 29,
 //         salary: 2000,
 //     },
 // ]
 
-
 // function checkSenior(arr) {  // rewrite loop with for of, 3 sposob with reduce: найти макс возраст с помощью reduce
 //     let oldestAge = 0
 //     let oldestEmployee = ""
-//     for(let i of arr){
-//         if (i.age > oldestAge) {
-//             oldestAge = i.age;
-//             oldestEmployee = i.name;
-//         }
-//     }
-//     return oldestEmployee
+//     // for(let i of arr){
+//     //     if (i.age > oldestAge) {
+//     //         oldestAge = i.age;
+//     //         oldestEmployee = i.name;
+//     //     }
+//     // }
+//     // return oldestEmployee
 
 //     // arr.forEach(elem => {
 //     //   if(elem.age > oldestAge) {
@@ -454,36 +441,46 @@
 //     //   }
 //     // })
 //     // return oldestEmployee
+
+//     oldestAge = arr.reduce((total, arr) => {
+//         console.log(total)
+//         if (total > arr.age) {
+//             return total;
+//         } else {
+//             return arr.age;
+//         }
+//     }, 0)
+
+//     return oldestAge
 // }
 
 // console.log(checkSenior(arr))
 
-
 // let products = [
-//     { 
-//         name: "Футболка", 
-//         price: 900, 
-//         rating: 4.5 
+//     {
+//         name: "Футболка",
+//         price: 900,
+//         rating: 4.5
 //     },
-//     { 
-//         name: "Джинсы", 
-//         price: 2500, 
+//     {
+//         name: "Джинсы",
+//         price: 2500,
 //         rating: 3.9
 //     },
-//     { 
-//         name: "Кроссовки", 
-//         price: 5000, 
-//         rating: 4.9 
+//     {
+//         name: "Кроссовки",
+//         price: 5000,
+//         rating: 4.9
 //     },
-//     { 
-//         name: "Рюкзак", 
-//         price: 3000, 
-//         rating: 4.7 
+//     {
+//         name: "Рюкзак",
+//         price: 3000,
+//         rating: 4.7
 //     },
-//     { 
-//         name: "Часы", 
-//         price: 8000, 
-//         rating: 4.6 
+//     {
+//         name: "Часы",
+//         price: 8000,
+//         rating: 4.6
 //     }
 //   ];
 
@@ -498,7 +495,6 @@
 //         filtered.push(elem.price > 1000 && elem.rating > 4)
 //     }
 
-
 //     filtred.sort((a, b) => {
 //     //   if (a.price < b.price) {
 //     //     return -1;
@@ -511,32 +507,29 @@
 //   }
 
 //   console.log(filtArr(products))
-  
-
 
 // const products = [
-//     { 
-//         name: "Телефон", 
-//         category: "Электроника", 
-//         price: 20000 
+//     {
+//         name: "Телефон",
+//         category: "Электроника",
+//         price: 20000
 //     },
-//     { 
-//         name: "Футболка", 
-//         category: "Одежда", 
-//         price: 1000 
+//     {
+//         name: "Футболка",
+//         category: "Одежда",
+//         price: 1000
 //     },
-//     { 
-//         name: "Ноутбук", 
-//         category: "Электроника", 
-//         price: 50000 
+//     {
+//         name: "Ноутбук",
+//         category: "Электроника",
+//         price: 50000
 //     },
-//     { 
-//         name: "Шорты", 
-//         category: "Одежда", 
-//         price: 1500 
+//     {
+//         name: "Шорты",
+//         category: "Одежда",
+//         price: 1500
 //     },
 // ];
-  
 
 // function groupProductsByCategory(products) {
 //     const groupedProducts = {};
@@ -557,10 +550,6 @@
 //   }
 
 // console.log(groupProductsByCategory(products))
-
-
-
-
 
 // const arr = [
 //     [1,5,3],
@@ -590,12 +579,6 @@
 //   }
 
 //   console.log(sumTable(arr, 0, 'column'))
-
-
-
-
-
-
 
 // const arr = [1, 2, 3, -5, -2, 4, 5, -6, 10, 20];
 
@@ -627,7 +610,6 @@
 
 // console.log(averagePositive(arr))
 
-
 // const student = {
 //     name: "Иван",
 //     age: 20,
@@ -655,28 +637,27 @@
 
 // console.log(middleGrade(student))
 
-
 // const cities = ["Варшава", "Краков", "Лодзь", "Вроцлав", "Познань", "Гданьск", "Щецин", "Люблин", "Катовице", "Быдгощ"];
 
 // function filterToUpper(arr) {
-//     // const filteredCities = arr.filter(elem => elem.includes("а")).map(city => {
-//     //     return city.toUpperCase()
-//     // })
-    
-//     // return filteredCities
-//     let filteredCities = [] 
-//     for(let i = 0; i < arr.length; i++) {
-//         if(arr[i].includes("а")){
-//             filteredCities.push(arr[i].toUpperCase())
-//         }
-//     }
+//     const filteredCities = arr.filter(elem => elem.includes("а")).map(city => {
+//         return city.toUpperCase()
+//     })
+
 //     return filteredCities
+
+//     // let filteredCities = []
+//     // for(let i = 0; i < arr.length; i++) {
+//     //     if(arr[i].includes("а")){
+//     //         filteredCities.push(arr[i].toUpperCase())
+//     //     }
+//     // }
+//     // return filteredCities
 // }
 
 // console.log(cities)
 
 // console.log(filterToUpper(cities))
-
 
 // const salesData = {
 //     "Chocolate": 300,
@@ -716,7 +697,7 @@
 //     {
 //       name: "Иван",
 //       course: 2,
-//       grades: [5, 4, 5, 5, 5, 5, 5, 5, 5]
+//       grades: [5, 4, 5, 5, 5,]
 //     },
 //     {
 //       name: "Алексей",
@@ -730,9 +711,6 @@
 //     }
 //   ];
 
-  
-  
-  
 //   function findStudentsWithHighAverage(arr) {
 
 //     const topStudents = arr.filter(student => {
@@ -744,55 +722,101 @@
 
 //   console.log(findStudentsWithHighAverage(students))
 
-
 // const products = [
-//     { name: "Телефон Samsung", price: 15000, rating: 4.5, available: true },
-//     { name: "Ноутбук Lenovo", price: 45000, rating: 4.2, available: true },
-//     { name: "Планшет Apple", price: 35000, rating: 4.8, available: false },
-//     { name: "Умные часы Xiaomi", price: 15000, rating: 4.1, available: true },
-//     { name: "Фотоаппарат Canon", price: 25000, rating: 4.4, available: false }
+//   { name: "Телефон Samsung", price: 15000, rating: 4.5, available: true },
+//   { name: "Ноутбук Lenovo", price: 45000, rating: 4.2, available: true },
+//   { name: "Планшет Apple", price: 35000, rating: 4.8, available: false },
+//   { name: "Умные часы Xiaomi", price: 15000, rating: 4.1, available: true },
+//   { name: "Фотоаппарат Canon", price: 25000, rating: 4.4, available: false },
+// ];
+
+// function sortProduct(arr) {
+//   // arr.sort(function(a, b) {
+//   //   if (a.price < b.price) {
+//   //     return -1;
+//   //   }
+//   //   if (a.price > b.price) {
+//   //     return 1;
+//   //   }
+//   //   if (a.rating > b.rating) {
+//   //     return -1;
+//   //   }
+//   //   if (a.rating < b.rating) {
+//   //     return 1;
+//   //   }
+//   //   return 0;
+//   // });
+
+//   // return arr;
+
+//   for (let i = 0; i < products.length - 1; i++) {
+//     for (let j = i + 1; j < products.length; j++) {
+//       if (products[i].price > products[j].price) {
+//         let temp = products[i];
+//         products[i] = products[j];
+//         products[j] = temp;
+//       }
+//     }
+//   }
+
+//   console.log(products)
+  
+//   for (let i = 0; i < products.length - 1; i++) {
+//     for (let j = i + 1; j < products.length; j++) {
+//       if (products[i].rating < products[j].rating) {
+//         let temp = products[i];
+//         products[i] = products[j];
+//         products[j] = temp;
+//       }
+//     }
+//   }
+  
+//   console.log(products)
+// }
+
+// sortProduct(products)
+
+
+// const arr = [1,2,3,4,5,6,7,8,9,10,]
+
+// function checkEven(arr) {
+//     let even = arr.filter((elem) => elem % 2 === 0)
+//     return even
+// }
+
+// console.log(checkEven(arr))
+
+// const arr = ["Привет","мальчик","нога","Олень","Брат","где",]
+
+// function checkHighLetter(arr) {
+//     const high = arr.filter((elem) => {
+//         return elem.charAt(0) === elem.charAt(0).toUpperCase()
+//     })
+//     return high
+// }
+
+// console.log(checkHighLetter(arr))
+
+// const people = [
+//     { name: "Alice", age: 25 },
+//     { name: "Bob", age: 10 },
+//     { name: "Charlie", age: 20 },
+//     { name: "Dave", age: 15 }
 //   ];
 
+  
+// function checkAge(arr) {
+//     const some = arr.filter((elem) => elem.age > 18)
+//     return some
+// }
 
+// console.log(checkAge(people))
 
-//   function sortProduct(arr) {
-//         arr.sort(function(a, b) {
-//           if (a.price < b.price) {
-//             return -1;
-//           }
-//           if (a.price > b.price) {
-//             return 1;
-//           }
-//           if (a.rating > b.rating) {
-//             return -1;
-//           }
-//           if (a.rating < b.rating) {
-//             return 1;
-//           }
-//           return 0;
-//         });
+// const arr = [1,2,3,4,5,6,7]
 
-//         return arr;
+// function sum(arr) {
+//     return arr.reduce((total, elem) => total + elem)
+// }
 
-//         // for(let a of products) {
-//     //   for(let b of products){
-//     //     if (a.price < b.price) {
-//     //       return -1;
-//     //     } else if (a.price > b.price) {
-//     //       return 1;
-//     //     } else if (a.price === b.price) {
-//     //         if (a.rating > b.rating) {
-//     //             return -1;
-//     //           } else if (a.rating < b.rating) {
-//     //             return 1;
-//     //           }
-//     //     }
-       
-//     //   }
-//     // }
-//     }
-//   console.log(sortProduct(products))
-
-
-
+// console.log(sum(arr))
 
